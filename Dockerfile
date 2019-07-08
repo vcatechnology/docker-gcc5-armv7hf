@@ -31,5 +31,10 @@ RUN sudo dpkg --add-architecture armhf \
     && conan profile new default --detect \
     && conan profile update settings.arch=armv7hf default \
     && conan config rm storage.path \ 
-    && sudo ln -s /usr/arm-linux-gnueabihf/lib/ld-linux-armhf.so.3 /lib/ld-linux-armhf.so.3
+    && sudo ln -s /usr/arm-linux-gnueabihf/lib/ld-linux-armhf.so.3 /lib/ld-linux-armhf.so.3 \
+    && curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - \
+    && sudo apt-get install -y --no-install-recommends nodejs \
+    && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - \
+    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list \
+    && sudo apt-get update && sudo apt-get install -y --no-install-recommends yarn
 
