@@ -31,7 +31,7 @@ RUN sudo dpkg --add-architecture armhf \
     && pip install -q --no-cache-dir conan conan-package-tools --upgrade \
     && conan profile new default --detect \
     && conan profile update settings.arch=armv7hf default \
-    && conan config rm storage.path \ 
+    && conan config rm storage.path \
     && sudo ln -s /usr/arm-linux-gnueabihf/lib/ld-linux-armhf.so.3 /lib/ld-linux-armhf.so.3 \
     && curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - \
     && sudo apt-get install -y --no-install-recommends nodejs \
