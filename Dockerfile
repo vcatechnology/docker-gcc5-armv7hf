@@ -41,3 +41,11 @@ RUN sudo dpkg --add-architecture armhf \
     && sudo apt-get update && sudo apt-get install -y --no-install-recommends yarn \
     && yarn global add parcel-bundler@1.12.3
 
+RUN wget --no-check-certificate --quiet https://cmake.org/files/v3.14/cmake-3.14.3-Linux-x86_64.tar.gz \
+    && tar -xzf cmake-3.14.3-Linux-x86_64.tar.gz \
+       --exclude=bin/cmake-gui \
+       --exclude=doc/cmake \
+       --exclude=share/cmake-3.12/Help \
+    && sudo cp -fR cmake-3.14.3-Linux-x86_64/* /usr \
+    && rm -rf cmake-3.14.3-Linux-x86_64 \
+    && rm cmake-3.14.3-Linux-x86_64.tar.gz
