@@ -1,6 +1,6 @@
 FROM conanio/gcc5
 
-LABEL maintainer="Luis Martinez de Bartolome <luism@jfrog.com>"
+LABEL maintainer="Husam Hebaishi <husam.hebaishi@vcatechnology.com>"
 
 ENV CC=arm-linux-gnueabihf-gcc-5 \
     CXX=arm-linux-gnueabihf-g++-5 \
