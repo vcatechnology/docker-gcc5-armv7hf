@@ -21,6 +21,7 @@ RUN sudo dpkg --add-architecture armhf \
     && sudo apt-get -qq install -y --force-yes --no-install-recommends \
        ".*5.*arm-linux-gnueabihf.*" \
        binutils-arm-linux-gnueabi \
+       patchelf \
        qemu \
        ssh \
     && sudo update-alternatives --install /usr/bin/arm-linux-gnueabihf-g++ arm-linux-gnueabihf-g++ /usr/bin/arm-linux-gnueabihf-g++-5 100 \
