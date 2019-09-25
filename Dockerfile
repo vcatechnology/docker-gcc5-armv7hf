@@ -29,7 +29,7 @@ RUN sudo dpkg --add-architecture armhf \
     && sudo update-alternatives --install /usr/bin/arm-linux-gnueabihf-gcc arm-linux-gnueabihf-gcc /usr/bin/arm-linux-gnueabihf-gcc-5 100 \
     && sudo update-alternatives --install /usr/bin/arm-linux-gnueabihf-cc arm-linux-gnueabihf-cc /usr/bin/arm-linux-gnueabihf-gcc-5 100 \
     && sudo rm -rf /var/lib/apt/lists/* \
-    && pip install -q --no-cache-dir conan conan-package-tools --upgrade \
+    && pip install -q --no-cache-dir conan conan-package-tools scp --upgrade \
     && conan profile new default --detect \
     && conan profile update settings.arch=armv7hf default \
     && conan config rm storage.path \
